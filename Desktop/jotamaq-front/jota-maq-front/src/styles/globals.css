@@ -1,0 +1,360 @@
+/* ============================================
+   ARQUIVO: src/styles/globals.css
+   SUBSTITUA todo o conteúdo do arquivo atual
+   ============================================ */
+
+/* Reset CSS e variáveis do Design System */
+:root {
+  /* Cores principais */
+  --primary-50: #f0f9ff;
+  --primary-500: #0ea5e9;
+  --primary-600: #0284c7;
+  
+  /* Cinzas */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Estados */
+  --success-50: #f0fdf4;
+  --success-500: #22c55e;
+  --success-600: #16a34a;
+  --warning-50: #fffbeb;
+  --warning-500: #f59e0b;
+  --error-50: #fef2f2;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: var(--gray-900);
+  background-color: var(--gray-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================
+   CLASSES UTILITÁRIAS (Estilo Tailwind)
+   ============================================ */
+
+/* Layout */
+.min-h-screen { min-height: 100vh; }
+.h-16 { height: 4rem; }
+.w-full { width: 100%; }
+.w-4 { width: 1rem; }
+.w-12 { width: 3rem; }
+.max-w-md { max-width: 28rem; }
+.max-w-7xl { max-width: 80rem; }
+
+/* Flexbox */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Grid */
+.grid { display: grid; }
+.gap-4 { gap: 1rem; }
+
+/* Espaçamento */
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.ml-1 { margin-left: 0.25rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Cores de fundo */
+.bg-white { background-color: white; }
+.bg-gray-50 { background-color: var(--gray-50); }
+.bg-gray-100 { background-color: var(--gray-100); }
+.bg-blue-50 { background-color: var(--primary-50); }
+.bg-blue-500 { background-color: var(--primary-500); }
+.bg-blue-600 { background-color: var(--primary-600); }
+.bg-red-50 { background-color: var(--error-50); }
+.bg-red-100 { background-color: #fee2e2; }
+.bg-red-500 { background-color: var(--error-500); }
+.bg-red-600 { background-color: var(--error-600); }
+.bg-green-50 { background-color: var(--success-50); }
+.bg-green-500 { background-color: var(--success-500); }
+.bg-green-600 { background-color: var(--success-600); }
+
+/* Cores de texto */
+.text-white { color: white; }
+.text-gray-600 { color: var(--gray-600); }
+.text-gray-700 { color: var(--gray-700); }
+.text-gray-900 { color: var(--gray-900); }
+.text-red-500 { color: var(--error-500); }
+.text-red-600 { color: var(--error-600); }
+.text-red-700 { color: #b91c1c; }
+.text-blue-600 { color: var(--primary-600); }
+.text-green-700 { color: #15803d; }
+.text-green-800 { color: #166534; }
+
+/* Bordas */
+.border { border: 1px solid var(--gray-200); }
+.border-gray-200 { border-color: var(--gray-200); }
+.border-gray-300 { border-color: var(--gray-300); }
+.border-red-400 { border-color: #f87171; }
+.border-red-500 { border-color: var(--error-500); }
+.border-blue-200 { border-color: #bfdbfe; }
+.border-green-200 { border-color: #bbf7d0; }
+.border-b { border-bottom: 1px solid var(--gray-200); }
+
+/* Border radius */
+.rounded { border-radius: 0.25rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-full { border-radius: 9999px; }
+
+/* Sombras */
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+
+/* Tipografia */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-6xl { font-size: 3.75rem; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+/* Transições */
+.transition-colors { transition: color 0.2s, background-color 0.2s; }
+.transition-all { transition: all 0.2s; }
+.duration-200 { transition-duration: 0.2s; }
+
+/* Estados */
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+/* Focus */
+.focus\:outline-none:focus { outline: none; }
+.focus\:ring-2:focus { box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.5); }
+.focus\:ring-offset-2:focus { box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(14, 165, 233, 0.5); }
+.focus\:border-blue-500:focus { border-color: var(--primary-500); }
+.focus\:border-red-500:focus { border-color: var(--error-500); }
+.focus\:ring-blue-500:focus { box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.5); }
+.focus\:ring-red-500:focus { box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.5); }
+.focus\:ring-opacity-20:focus { box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2); }
+
+/* Hover */
+.hover\:bg-blue-600:hover { background-color: var(--primary-600); }
+.hover\:bg-red-600:hover { background-color: var(--error-600); }
+.hover\:bg-gray-50:hover { background-color: var(--gray-50); }
+
+/* Display */
+.block { display: block; }
+.hidden { display: none; }
+
+/* Disabled */
+.opacity-60 { opacity: 0.6; }
+
+/* Animações */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   ESPAÇAMENTOS ESPECÍFICOS
+   ============================================ */
+
+.space-y-4 > * + * { margin-top: 1rem; }
+
+/* ============================================
+   COMPONENTES ESPECÍFICOS
+   ============================================ */
+
+/* Buttons com classes específicas */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Input styles melhorados */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+input.error:focus {
+  border-color: var(--error-500);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* Card específico */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Classes utilitárias responsivas básicas */
+@media (max-width: 768px) {
+  .max-w-md {
+    max-width: 90%;
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ============================================
+   CLASSES PERSONALIZADAS PARA O SISTEMA
+   ============================================ */
+
+/* Container principal */
+.admin-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Card de login */
+.login-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-200);
+}
+
+/* Header admin */
+.admin-header {
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão de logout */
+.logout-btn {
+  background: var(--error-500);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background: var(--error-600);
+}
+
+/* Status box */
+.status-box {
+  background: var(--success-50);
+  border: 1px solid var(--success-500);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Alert boxes */
+.alert-error {
+  background: #fee2e2;
+  border: 1px solid #f87171;
+  color: #b91c1c;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.alert-info {
+  background: var(--primary-50);
+  border: 1px solid #bfdbfe;
+  color: var(--primary-600);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   MELHORIAS DE UX
+   ============================================ */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible para acessibilidade */
+*:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
