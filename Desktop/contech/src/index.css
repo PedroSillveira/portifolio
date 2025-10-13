@@ -1,0 +1,52 @@
+/* ======================================= */
+/* 1. VARIÁVEIS DE COR E TIPOGRAFIA (Geral) */
+/* ======================================= */
+:root {
+    --dark-primary: #121212; 
+    --dark-secondary: #1E1E1E; 
+    --text-light: #E0E0E0; 
+    --cta-color: #00CED1; /* Ciano Elétrico */
+    --cta-hover-color: #00FFFF; 
+    --font-family-sans-serif: 'Inter', sans-serif; 
+}
+
+/* ======================================= */
+/* 2. ESTILOS GLOBAIS E UTILITÁRIOS */
+/* ======================================= */
+body {
+    background-color: var(--dark-primary);
+    color: var(--text-light);
+    font-family: var(--font-family-sans-serif);
+    scroll-behavior: smooth; 
+    padding-top: 80px; /* Espaço para o Header flutuante */
+    /* Removemos o transition: background-color 0.3s; para simplificar */
+}
+
+/* Sobrescritas do Bootstrap para Dark Mode */
+.bg-dark-primary { background-color: var(--dark-primary) !important; }
+.bg-dark-secondary { background-color: var(--dark-secondary) !important; }
+.text-light { color: var(--text-light) !important; }
+.text-cta-color { color: var(--cta-color) !important; }
+
+/* 3. ANIMAÇÕES SUAVES (Scroll Reveal - GLOBAL) */
+/* Mantemos as classes de animação aqui, pois são classes de utilidade global */
+.animate-fade-in-up,
+.animate-slide-left,
+.animate-slide-right {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+.animate-fade-in-up { transform: translateY(20px); }
+.animate-slide-left { transform: translateX(-50px); }
+.animate-slide-right { transform: translateX(50px); }
+
+.is-visible {
+    opacity: 1;
+    transform: none;
+}
+/* Utility para aplicar delays em elementos */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }

@@ -1,0 +1,26 @@
+/* FAQ.module.css */
+
+.faqItem {
+    background-color: var(--dark-secondary);
+    border-color: var(--dark-primary);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.accordionButton {
+    background-color: var(--dark-secondary) !important;
+    color: var(--text-light);
+    font-weight: 600;
+    box-shadow: none !important; 
+}
+
+.accordionButton:not(.collapsed) {
+    color: var(--cta-color);
+    background-color: #282828 !important; 
+}
+
+.accordionBody {
+    background-color: #282828; 
+    color: var(--text-light);
+}

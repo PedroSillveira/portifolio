@@ -1,0 +1,134 @@
+/* ========================================
+   CORES CONTECH
+   ======================================== */
+
+:root {
+  /* Cores primárias */
+  --verde-primary: #10b981;
+  --verde-hover: #059669;
+  --roxo-primary: #8b5cf6;
+  --roxo-dark: #6d28d9;
+  
+  /* Cores neutras */
+  --branco: #ffffff;
+  --cinza-light: #f3f4f6;
+  --cinza-text: #6b7280;
+  --preto: #111827;
+  
+  /* Dark mode */
+  --dark-bg: #0f172a;
+  --dark-card: #1e293b;
+  --dark-text: #e2e8f0;
+}
+
+/* ========================================
+   RESET E BASE
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--preto);
+  background-color: var(--branco);
+  line-height: 1.6;
+}
+
+/* ========================================
+   UTILITÁRIOS
+   ======================================== */
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--verde-primary) 0%, var(--roxo-primary) 100%);
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.btn-verde {
+  background-color: var(--verde-primary);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-verde:hover {
+  background-color: var(--verde-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-roxo {
+  background-color: var(--roxo-primary);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-roxo:hover {
+  background-color: var(--roxo-dark);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* ========================================
+   SCROLL SUAVE
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  
+  .btn-verde, .btn-roxo {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+/* Adicione no final do arquivo */
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

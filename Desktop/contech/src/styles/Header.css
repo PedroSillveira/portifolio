@@ -1,0 +1,75 @@
+/* Header.module.css */
+
+.mainHeader {
+    position: fixed;
+    top: 15px; 
+    left: 50%; 
+    transform: translateX(-50%) translateY(0); 
+    
+    width: 95%; 
+    max-width: 1400px; 
+    
+    z-index: 1040; 
+    padding: 0.75rem 0; 
+    
+    /* Glassmorphism Effect */
+    background-color: rgba(18, 18, 18, 0.85) !important; 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Borda e Arredondamento */
+    border-radius: 12px; 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    
+    transition: transform 0.4s ease-in-out, top 0.4s ease-in-out;
+}
+
+.scrollDown {
+    transform: translateX(-50%) translateY(-150%);
+}
+
+.scrollUp,
+.scrollInitial {
+    transform: translateX(-50%) translateY(0); 
+}
+
+/* Links de Navegação Ativos */
+.activeLink {
+    color: var(--cta-color) !important;
+    border-bottom: 2px solid var(--cta-color);
+}
+
+/* Estilo do botão de CTA na Navbar (gradiente) */
+.headerCta {
+    background: linear-gradient(145deg, #AAB8C2 10%, var(--cta-color) 90%); 
+    color: var(--dark-primary) !important;
+    border: none;
+    border-radius: 50px; 
+    font-weight: 700;
+    padding: 8px 25px;
+    box-shadow: 0 4px 10px rgba(0, 206, 209, 0.4);
+    transition: all 0.3s ease;
+}
+.headerCta:hover {
+    box-shadow: 0 6px 15px rgba(0, 206, 209, 0.6);
+    transform: scale(1.03);
+}
+
+/* Responsividade Mobile - Anulação do flutuante */
+@media (max-width: 992px) {
+    .mainHeader {
+        width: 100%;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: translateX(0) translateY(0); 
+    }
+    .scrollDown {
+        transform: translateY(-150%);
+    }
+    .scrollUp,
+    .scrollInitial {
+        transform: translateY(0);
+    }
+}
