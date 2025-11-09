@@ -1,0 +1,32 @@
+{
+  "name": "joao_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.1",
+    "express-slow-down": "^3.0.1",
+    "joi": "^18.0.1",
+    "jose": "^6.1.0",
+    "multer": "^2.0.1",
+    "nodemailer": "^7.0.10",
+    "pg": "^8.16.3",
+    "speakeasy": "^2.0.0"
+  },
+    "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
