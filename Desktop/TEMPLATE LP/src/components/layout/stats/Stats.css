@@ -1,0 +1,43 @@
+.stats-section {
+  padding: var(--spacing-5xl) 0;
+  background: var(--bg-gradient);
+  color: white;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .stats-section {
+    padding: var(--spacing-4xl) 0;
+  }
+
+  .stat-number {
+    font-size: var(--font-size-5xl);
+  }
+
+  .stat-label {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 576px) {
+  .stat-number {
+    font-size: var(--font-size-4xl);
+  }
+}
