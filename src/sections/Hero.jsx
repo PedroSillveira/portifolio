@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import Button from '../components/Button';
+import DockText from '../components/DockText';
 import './Hero.css';
 
 function Hero() {
@@ -11,14 +12,13 @@ function Hero() {
       <Container>
         <Row className="justify-content-center text-center">
           <Col lg={8}>
-            <motion.h1 
-              className="display-3 fw-bold mb-4 text-white"
+            <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Pedro Silveira
-            </motion.h1>
+              <DockText text="PEDRO SILVEIRA" className="hero-title text-white" />
+            </motion.div>
             
             <motion.h2 
               className="h3 mb-4 text-white"

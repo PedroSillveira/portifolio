@@ -17,9 +17,28 @@
   pointer-events: none;
 }
 
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title:hover span {
+  color: white !important;
+}
+
 @media (max-width: 768px) {
   .hero-section {
     min-height: 100vh;
     padding: 2rem 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.8rem;
   }
 }
