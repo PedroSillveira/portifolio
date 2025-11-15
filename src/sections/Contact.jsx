@@ -20,7 +20,6 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Implementar lógica de envio do formulário
         console.log('Form submitted:', formData);
         alert('Mensagem enviada! (Implementar backend depois)');
         setFormData({ name: '', email: '', message: '' });
@@ -36,10 +35,12 @@ function Contact() {
     return (
         <section id="contact">
             <Container>
-                <SectionTitle title="Contato" />
+                <div data-aos="fade-up">
+                    <SectionTitle title="Contato" />
+                </div>
                 <Row className="justify-content-center">
                     <Col lg={8}>
-                        <Form onSubmit={handleSubmit}>
+                        <Form onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="100">
                             <Form.Group className="mb-3">
                                 <Form.Label>Nome</Form.Label>
                                 <Form.Control
@@ -84,7 +85,7 @@ function Contact() {
                             </div>
                         </Form>
 
-                        <div className="text-center mt-5">
+                        <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
                             <h5 className="mb-4">Ou entre em contato pelas redes sociais:</h5>
                             <div className="d-flex justify-content-center gap-4">
                                 {socialLinks.map((social, index) => (
@@ -94,7 +95,12 @@ function Contact() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-dark"
-                                        style={{ fontSize: '2rem' }}
+                                        style={{ 
+                                            fontSize: '2rem',
+                                            transition: 'transform 0.3s ease'
+                                        }}
+                                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                                         aria-label={social.label}
                                     >
                                         <social.icon />
@@ -105,7 +111,7 @@ function Contact() {
                     </Col>
                 </Row>
             </Container>
-        </section >
+        </section>
     );
 }
 

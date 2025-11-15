@@ -1,11 +1,13 @@
 import React from 'react';
+import './SectionTitle.css';
 
 function SectionTitle({ title }) {
   return (
-    <h2 className="text-center mb-5">
-      {title}
-    </h2>
+    <div className="section-title-wrapper">
+      <h2 className="section-title">{title}</h2>
+      <div className="section-title-underline"></div>
+    </div>
   );
 }
 
-export default SectionTitle;
+export default SectionTitle;  
