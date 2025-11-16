@@ -1,0 +1,8 @@
+.particles-container {
+  pointer-events: none;
+}
+
+.particles-canvas {
+  width: 100%;
+  height: 100%;
+}

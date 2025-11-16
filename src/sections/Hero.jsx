@@ -4,13 +4,23 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import Button from '../components/Button';
 import DockText from '../components/DockText';
+import Particles from '../components/Particles';
+import ScrollHero from '../components/ScrollHero';
 import './Hero.css';
 
 function Hero() {
   return (
-    <section id="home" className="hero-section d-flex align-items-center">
+    <section id="home" className="hero-section">
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        color="#ffffff"
+        refresh
+      />
+
       <Container>
-        <Row className="justify-content-center text-center">
+        <Row className="text-left">
           <Col lg={8}>
             <motion.div
               initial={{ opacity: 0, y: -50 }}
@@ -19,20 +29,22 @@ function Hero() {
             >
               <DockText text="PEDRO SILVEIRA" className="hero-title text-white" />
             </motion.div>
-            
-            <motion.h2 
-              className="h3 mb-4 text-white"
+
+            <motion.h2
+              className="h1 mb-4 text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               <TypeAnimation
                 sequence={[
-                  'Desenvolvedor Web Full Stack',
-                  2000,
                   'Desenvolvedor Frontend',
                   2000,
                   'Desenvolvedor Backend',
+                  2000,
+                  'Desenvolvedor Full Stack',
+                  2000,
+                  'Agent Builder',
                   2000,
                 ]}
                 wrapper="span"
@@ -40,8 +52,8 @@ function Hero() {
                 repeat={Infinity}
               />
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="lead mb-5 text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -49,9 +61,9 @@ function Hero() {
             >
               Transformando ideias em soluções digitais
             </motion.p>
-            
-            <motion.div 
-              className="d-flex gap-3 justify-content-center flex-wrap"
+
+            <motion.div
+              className="d-flex gap-3  flex-wrap"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}
@@ -66,6 +78,7 @@ function Hero() {
           </Col>
         </Row>
       </Container>
+      <ScrollHero />
     </section>
   );
 }
