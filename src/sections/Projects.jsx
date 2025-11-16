@@ -12,14 +12,14 @@ function Projects() {
       description: 'Sistema de gerenciamento de processos seletivos e gestão de candidaturas com cálculo de compatibilidade entre vaga e candidato, acompanhamento de etapas e banco de talentos.',
       image: '/images/project1.png',
       technologies: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL'],
-      demoLink: 'https://xtalents.goxsolucoes.com/',
+      demoLink: 'https://xtalents.goxsolucoes.com/home',
       githubLink: '#'
     },
     {
       id: 2,
       title: 'Projeto 2',
       description: 'Descrição breve do projeto 2. Adicione detalhes sobre funcionalidades e objetivo.',
-      image: '/images/project2.png',
+      image: '../../public/images/project2.png',
       technologies: ['React.js', 'Bootstrap', 'Node.js'],
       demoLink: '#',
       githubLink: '#'
