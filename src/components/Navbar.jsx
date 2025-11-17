@@ -1,97 +1,74 @@
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
-} from "./ui/resizable-navbar";
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
 
-export function NavbarDemo() {
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Define se está no topo
+      if (currentScrollY < 50) {
+        setScrolled(false);
+        setVisible(true);
+      } else {
+        setScrolled(true);
+        
+        // Mostra navbar ao rolar para cima, esconde ao rolar para baixo
+        if (currentScrollY < lastScrollY) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const navItems = [
-    {
-      name: "Home",
-      link: "#home",
-    },
-    {
-      name: "Sobre",
-      link: "#about",
-    },
-    {
-      name: "Habilidades",
-      link: "#skills",
-    },
-    {
-      name: "Projetos",
-      link: "#projects",
-    },
-    {
-      name: "Contato",
-      link: "#contact",
-    },
+    { name: 'Home', link: '#home' },
+    { name: 'Sobre', link: '#about' },
+    { name: 'Habilidades', link: '#skills' },
+    { name: 'Projetos', link: '#projects' },
+    { name: 'Contato', link: '#contact' },
   ];
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
-    <div className="relative w-full">
-      <Navbar>
-        {/* Desktop Navigation */}
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Contato</NavbarButton>
-            <NavbarButton variant="primary">Baixar CV</NavbarButton>
-          </div>
-        </NavBody>
+    <nav 
+      className={`navbar-custom ${scrolled ? 'navbar-scrolled' : 'navbar-top'} ${!visible ? 'navbar-hidden' : ''}`}
+    >
+      <div className={scrolled ? 'container-scrolled' : 'container-top'}>
+        <a href="#home" className="navbar-brand">
+          Pedro Silveira
+        </a>
 
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
-
-          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
+        <ul className="navbar-nav">
+          {navItems.map((item, index) => (
+            <li key={index}>
+              <a href={item.link} className="nav-link">
+                {item.name}
               </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Contato
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Baixar CV
-              </NavbarButton>
-            </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
-    </div>
+            </li>
+          ))}
+        </ul>
+
+        <a 
+          href="/curriculo-pedro-silveira.pdf" 
+          download 
+          className="btn-cv"
+        >
+          Baixar CV
+        </a>
+      </div>
+    </nav>
   );
 }
 
-export default NavbarDemo;
+export default Navbar;
