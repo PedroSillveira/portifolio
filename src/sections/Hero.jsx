@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import Button from '../components/Button';
 import DockText from '../components/DockText';
-import Particles from '../components/Particles';
+import Particles from '../components/ui/Particles';
 import ScrollHero from '../components/ScrollHero';
 import './Hero.css';
 

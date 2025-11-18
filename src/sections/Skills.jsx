@@ -1,43 +1,66 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Badge } from 'react-bootstrap';
 import { 
   FaHtml5, 
   FaCss3Alt, 
   FaBootstrap, 
   FaReact, 
   FaNodeJs, 
-  FaGitAlt 
+  FaGitAlt,
+  FaGithub,
+  FaDocker,
+  FaNpm,
+  FaPython,
+  FaCode,
+  FaRobot,
+  FaLaptopCode,
+  FaServer,
+  FaDatabase,
+  FaJs,
+  FaVuejs,
+  FaSass,
+  FaMarkdown,
+  FaLinux,
+  FaAws,
+  FaSlack,
+  FaTrello,
+  FaFigma,
 } from 'react-icons/fa';
-import { 
-  SiExpress, 
-  SiPostgresql, 
-  SiJavascript,
-  SiJsonwebtokens,
-  SiSwagger,
-  SiOpenai
-} from 'react-icons/si';
-import { DiDatabase } from 'react-icons/di';
-import { AiOutlineApi } from 'react-icons/ai';
 import SectionTitle from '../components/SectionTitle';
-import OrbitRotation from '../components/OrbitRotation';
+import OrbitRotation from '../components/ui/OrbitRotation';
 import './Skills.css';
 
 function Skills() {
   const techIcons = [
+    // Órbita 1 - Frontend (8 ícones)
+    { Icon: FaReact, color: '#61DAFB', name: 'React.js' },
+    { Icon: FaJs, color: '#F7DF1E', name: 'JavaScript' },
     { Icon: FaHtml5, color: '#E34F26', name: 'HTML5' },
     { Icon: FaCss3Alt, color: '#1572B6', name: 'CSS3' },
     { Icon: FaBootstrap, color: '#7952B3', name: 'Bootstrap' },
-    { Icon: FaReact, color: '#61DAFB', name: 'React' },
-    { Icon: SiJavascript, color: '#F7DF1E', name: 'JavaScript' },
+    { Icon: FaSass, color: '#CC6699', name: 'Sass' },
+    { Icon: FaVuejs, color: '#4FC08D', name: 'Vue.js' },
+    
+    // Órbita 2 - Backend + Database + IA (12 ícones)
     { Icon: FaNodeJs, color: '#339933', name: 'Node.js' },
-    { Icon: SiExpress, color: '#000000', name: 'Express' },
-    { Icon: SiPostgresql, color: '#4169E1', name: 'PostgreSQL' },
-    { Icon: SiJsonwebtokens, color: '#000000', name: 'JWT' },
-    { Icon: AiOutlineApi, color: '#FF6C37', name: 'API REST' },
-    { Icon: SiSwagger, color: '#85EA2D', name: 'Swagger' },
-    { Icon: SiOpenai, color: '#412991', name: 'OpenAI' },
+    { Icon: FaDatabase, color: '#4169E1', name: 'PostgreSQL' },
+    { Icon: FaDatabase, color: '#4479A1', name: 'MySQL' },
+    { Icon: FaDatabase, color: '#47A248', name: 'MongoDB' },
+    { Icon: FaCode, color: '#FF6C37', name: 'API REST' },
+    { Icon: FaRobot, color: '#412991', name: 'OpenAI' },
+    { Icon: FaPython, color: '#3776AB', name: 'Python' },
+    { Icon: FaCode, color: '#85EA2D', name: 'Clean Code' },
+    { Icon: FaMarkdown, color: '#000000', name: 'Markdown' },
+    
+    // Órbita 3 - Ferramentas + DevOps (8 ícones)
     { Icon: FaGitAlt, color: '#F05032', name: 'Git' },
-    { Icon: DiDatabase, color: '#003B57', name: 'Database' },
+    { Icon: FaGithub, color: '#181717', name: 'GitHub' },
+    { Icon: FaDocker, color: '#2496ED', name: 'Docker' },
+    { Icon: FaNpm, color: '#CB3837', name: 'NPM' },
+    { Icon: FaLinux, color: '#FCC624', name: 'Linux' },
+    { Icon: FaAws, color: '#FF9900', name: 'AWS' },
+    { Icon: FaFigma, color: '#4A154B', name: 'Figma' },
+    { Icon: FaTrello, color: '#0052CC', name: 'Trello' },
   ];
 
   const centerIcon = {
@@ -49,6 +72,37 @@ function Skills() {
     name: 'Pedro Silveira'
   };
 
+  const skillCategories = [
+    {
+      icon: FaLaptopCode,
+      title: 'Frontend',
+      color: '#61DAFB',
+      description: 'Interfaces modernas e responsivas com foco em experiência do usuário.',
+      techs: ['React.js', 'JavaScript', 'HTML5', 'CSS3']
+    },
+    {
+      icon: FaServer,
+      title: 'Backend',
+      color: '#339933',
+      description: 'APIs robustas e escaláveis com autenticação e documentação completa.',
+      techs: ['Node.js', 'Express.js', 'JWT', 'API REST']
+    },
+    {
+      icon: FaDatabase,
+      title: 'Banco de Dados',
+      color: '#4169E1',
+      description: 'Modelagem e otimização de dados com queries complexas.',
+      techs: ['PostgreSQL', 'MySQL', 'MongoDB']
+    },
+    {
+      icon: FaRobot,
+      title: 'IA & Automação',
+      color: '#412991',
+      description: 'Soluções inteligentes para automação e otimização de processos.',
+      techs: ['OpenAI', 'Agent Builder', 'Python']
+    }
+  ];
+
   return (
     <section id="skills">
       <Container>
@@ -57,47 +111,8 @@ function Skills() {
         </div>
         
         <Row className="align-items-center">
-          {/* Texto à esquerda */}
-          <Col lg={5} className="mb-5 mb-lg-0" data-aos="fade-right">
-            <div className="skills-content">
-              <h3 className="mb-4">Tecnologias & Ferramentas</h3>
-              
-              <div className="skill-category mb-4">
-                <h5 className="text-primary mb-3">Frontend</h5>
-                <p className="text-muted">
-                  Desenvolvimento de interfaces modernas e responsivas utilizando React.js, 
-                  HTML5, CSS3 e Bootstrap. Foco em experiência do usuário e design intuitivo.
-                </p>
-              </div>
-
-              <div className="skill-category mb-4">
-                <h5 className="text-primary mb-3">Backend</h5>
-                <p className="text-muted">
-                  Criação de APIs robustas e escaláveis com Node.js e Express.js. 
-                  Expertise em autenticação JWT, integração de serviços e documentação com Swagger.
-                </p>
-              </div>
-
-              <div className="skill-category mb-4">
-                <h5 className="text-primary mb-3">Banco de Dados</h5>
-                <p className="text-muted">
-                  Modelagem e otimização de bancos de dados relacionais com PostgreSQL. 
-                  Experiência em queries complexas e performance.
-                </p>
-              </div>
-
-              <div className="skill-category">
-                <h5 className="text-primary mb-3">IA & Automação</h5>
-                <p className="text-muted">
-                  Desenvolvimento de soluções inteligentes utilizando OpenAI e Agent Builder 
-                  para automação de processos e otimização de workflows.
-                </p>
-              </div>
-            </div>
-          </Col>
-
-          {/* OrbitRotation à direita */}
-          <Col lg={7} data-aos="fade-left">
+          {/* OrbitRotation à esquerda */}
+          <Col lg={6} className="mb-5 mb-lg-0" data-aos="fade-right">
             <div className="orbit-wrapper-container">
               <OrbitRotation
                 icons={techIcons}
@@ -109,10 +124,52 @@ function Skills() {
               />
             </div>
           </Col>
+
+          {/* Skills Grid à direita */}
+          <Col lg={6} data-aos="fade-left">
+            <div className="skills-grid">
+              {skillCategories.map((category, index) => (
+                <div 
+                  key={index} 
+                  className="skill-card"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <div className="skill-card-header">
+                    <div 
+                      className="skill-icon-wrapper"
+                      style={{ backgroundColor: `${category.color}15` }}
+                    >
+                      <category.icon 
+                        className="skill-icon" 
+                        style={{ color: category.color }}
+                      />
+                    </div>
+                    <h5 className="skill-title">{category.title}</h5>
+                  </div>
+                  
+                  <p className="skill-description">{category.description}</p>
+                  
+                  <div className="skill-badges">
+                    {category.techs.map((tech, idx) => (
+                      <Badge 
+                        key={idx} 
+                        bg="light" 
+                        text="dark"
+                        className="skill-badge"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Col>
         </Row>
       </Container>
     </section>
   );
 }
 
-export default Skills;
+export default Skills;    
