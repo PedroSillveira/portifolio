@@ -3,9 +3,18 @@ import { Container } from 'react-bootstrap';
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white text-center py-4 mt-5">
+    <footer style={{
+      background: 'var(--black-color)',
+      color: 'var(--white-color)',
+      textAlign: 'center',
+      padding: '2rem 0',
+      marginTop: '3rem',
+      borderTop: '1px solid var(--gray-800)'
+    }}>
       <Container>
-        <p className="mb-0">© 2024 - Todos os direitos reservados</p>
+        <p style={{ margin: 0, color: 'var(--white-color)' }}>
+          © 2024 - Todos os direitos reservados
+        </p>
       </Container>
     </footer>
   );

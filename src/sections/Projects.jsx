@@ -36,7 +36,7 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="bg-light">
+    <section id="projects">
       <Container>
         <div data-aos="fade-up">
           <SectionTitle title="Projetos" />
@@ -51,21 +51,50 @@ function Projects() {
                 transition={{ delay: index * 0.2, duration: 0.6 }}
                 whileHover={{ y: -10 }}
               >
-                <Card className="h-100 shadow-sm">
+                <Card 
+                  className="h-100"
+                  style={{
+                    background: 'var(--white-color)',
+                    border: '1px solid var(--gray-300)',
+                    boxShadow: 'var(--shadow-md)',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = 'var(--shadow-xl)';
+                    e.currentTarget.style.borderColor = 'var(--accent-purple)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                    e.currentTarget.style.borderColor = 'var(--gray-300)';
+                  }}
+                >
                   <Card.Img 
                     variant="top" 
                     src={project.image} 
                     alt={project.title}
-                    style={{ height: '200px', objectFit: 'cover' }}
+                    style={{ 
+                      height: '200px', 
+                      objectFit: 'cover'
+                    }}
                   />
                   <Card.Body className="d-flex flex-column">
-                    <Card.Title>{project.title}</Card.Title>
-                    <Card.Text className="flex-grow-1">
+                    <Card.Title style={{ color: 'var(--text-dark)' }}>
+                      {project.title}
+                    </Card.Title>
+                    <Card.Text className="flex-grow-1" style={{ color: 'var(--text-gray)' }}>
                       {project.description}
                     </Card.Text>
                     <div className="mb-3">
                       {project.technologies.map((tech, index) => (
-                        <Badge key={index} bg="secondary" className="me-2 mb-2">
+                        <Badge 
+                          key={index} 
+                          className="me-2 mb-2"
+                          style={{
+                            background: 'var(--black-color)',
+                            color: 'var(--white-color)',
+                            border: '1px solid var(--black-color)'
+                          }}
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -83,9 +112,21 @@ function Projects() {
                       <Button 
                         href={project.githubLink} 
                         target="_blank" 
-                        variant="outline-dark" 
                         size="sm"
                         className="flex-grow-1"
+                        style={{
+                          background: 'transparent',
+                          border: '2px solid var(--black-color)',
+                          color: 'var(--black-color)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = 'var(--black-color)';
+                          e.currentTarget.style.color = 'var(--white-color)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = 'var(--black-color)';
+                        }}
                       >
                         GitHub
                       </Button>

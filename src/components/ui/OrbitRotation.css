@@ -10,7 +10,7 @@
 .orbit-rotation-container {
   position: relative;
   display: flex;
-  items-center: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -21,10 +21,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--black-color);
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  border: 2px solid var(--accent-purple);
+  box-shadow: 0 10px 30px rgba(74, 20, 140, 0.3);
   backdrop-filter: blur(4px);
 }
 
@@ -35,17 +35,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 2px dotted rgba(102, 126, 234, 0.3);
+  border: 2px dotted rgba(255, 255, 255, 0.2);
 }
 
 /* Container dos ícones */
 .orbit-icon-container {
   position: absolute;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -53,7 +53,9 @@
 
 .orbit-icon-container:hover {
   transform: translate(-50%, -50%) scale(1.2) !important;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(74, 20, 140, 0.4);
+  border-color: var(--accent-purple);
+  background: rgba(74, 20, 140, 0.2);
   z-index: 20;
 }
 

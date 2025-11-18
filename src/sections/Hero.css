@@ -1,5 +1,5 @@
 .hero-section {
-  background: linear-gradient(135deg, #000000 0%, #0e0121 100%);
+  background: var(--gradient-dark);
   position: relative;
   overflow: hidden;
 }
@@ -23,18 +23,26 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(74, 20, 140, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(74, 20, 140, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .hero-title {
   font-size: 3.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .hero-title:hover span {
-  color: white !important;
+  color: var(--accent-purple) !important;
+}
+
+.subtitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
 }
 
 @media (max-width: 768px) {

@@ -42,7 +42,7 @@ function Contact() {
                     <Col lg={8}>
                         <Form onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="100">
                             <Form.Group className="mb-3">
-                                <Form.Label>Nome</Form.Label>
+                                <Form.Label style={{ color: 'var(--white-color)' }}>Nome</Form.Label>
                                 <Form.Control
                                     type="text"
                                     name="name"
@@ -50,11 +50,24 @@ function Contact() {
                                     onChange={handleChange}
                                     placeholder="Seu nome"
                                     required
+                                    style={{
+                                        background: 'rgba(255, 255, 255, 0.1)',
+                                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                                        color: 'var(--white-color)'
+                                    }}
+                                    onFocus={(e) => {
+                                        e.target.style.borderColor = 'var(--accent-purple)';
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                                    }}
+                                    onBlur={(e) => {
+                                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                                    }}
                                 />
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Email</Form.Label>
+                                <Form.Label style={{ color: 'var(--white-color)' }}>Email</Form.Label>
                                 <Form.Control
                                     type="email"
                                     name="email"
@@ -62,11 +75,24 @@ function Contact() {
                                     onChange={handleChange}
                                     placeholder="seu@email.com"
                                     required
+                                    style={{
+                                        background: 'rgba(255, 255, 255, 0.1)',
+                                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                                        color: 'var(--white-color)'
+                                    }}
+                                    onFocus={(e) => {
+                                        e.target.style.borderColor = 'var(--accent-purple)';
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                                    }}
+                                    onBlur={(e) => {
+                                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                                    }}
                                 />
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label>Mensagem</Form.Label>
+                                <Form.Label style={{ color: 'var(--white-color)' }}>Mensagem</Form.Label>
                                 <Form.Control
                                     as="textarea"
                                     rows={5}
@@ -75,18 +101,52 @@ function Contact() {
                                     onChange={handleChange}
                                     placeholder="Sua mensagem..."
                                     required
+                                    style={{
+                                        background: 'rgba(255, 255, 255, 0.1)',
+                                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                                        color: 'var(--white-color)'
+                                    }}
+                                    onFocus={(e) => {
+                                        e.target.style.borderColor = 'var(--accent-purple)';
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                                    }}
+                                    onBlur={(e) => {
+                                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                                    }}
                                 />
                             </Form.Group>
 
                             <div className="text-center">
-                                <Button type="submit" variant="primary" size="lg">
+                                <Button 
+                                    type="submit" 
+                                    variant="primary" 
+                                    size="lg"
+                                    style={{
+                                        background: 'var(--white-color)',
+                                        color: 'var(--black-color)',
+                                        border: '2px solid var(--white-color)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.background = 'var(--accent-purple)';
+                                        e.currentTarget.style.borderColor = 'var(--accent-purple)';
+                                        e.currentTarget.style.color = 'var(--white-color)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.background = 'var(--white-color)';
+                                        e.currentTarget.style.borderColor = 'var(--white-color)';
+                                        e.currentTarget.style.color = 'var(--black-color)';
+                                    }}
+                                >
                                     Enviar Mensagem
                                 </Button>
                             </div>
                         </Form>
 
                         <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
-                            <h5 className="mb-4">Ou entre em contato pelas redes sociais:</h5>
+                            <h5 className="mb-4" style={{ color: 'var(--white-color)' }}>
+                                Ou entre em contato pelas redes sociais:
+                            </h5>
                             <div className="d-flex justify-content-center gap-4">
                                 {socialLinks.map((social, index) => (
                                     <a
@@ -94,13 +154,19 @@ function Contact() {
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-dark"
                                         style={{ 
                                             fontSize: '2rem',
-                                            transition: 'transform 0.3s ease'
+                                            transition: 'transform 0.3s ease',
+                                            color: 'var(--white-color)'
                                         }}
-                                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1.2)';
+                                            e.currentTarget.style.color = 'var(--accent-purple)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1)';
+                                            e.currentTarget.style.color = 'var(--white-color)';
+                                        }}
                                         aria-label={social.label}
                                     >
                                         <social.icon />

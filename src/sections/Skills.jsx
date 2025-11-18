@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Badge } from 'react-bootstrap';
-import { 
-  FaHtml5, 
-  FaCss3Alt, 
-  FaBootstrap, 
-  FaReact, 
-  FaNodeJs, 
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaReact,
+  FaNodeJs,
   FaGitAlt,
   FaGithub,
   FaDocker,
@@ -17,14 +17,18 @@ import {
   FaServer,
   FaDatabase,
   FaJs,
+  // FaWordpress,
+  FaPhp,
+  FaJava,
+  // FaAngular,
   FaVuejs,
   FaSass,
   FaMarkdown,
   FaLinux,
   FaAws,
-  FaSlack,
+  // FaSlack,
   FaTrello,
-  FaFigma,
+  FaFigma
 } from 'react-icons/fa';
 import SectionTitle from '../components/SectionTitle';
 import OrbitRotation from '../components/ui/OrbitRotation';
@@ -38,20 +42,24 @@ function Skills() {
     { Icon: FaHtml5, color: '#E34F26', name: 'HTML5' },
     { Icon: FaCss3Alt, color: '#1572B6', name: 'CSS3' },
     { Icon: FaBootstrap, color: '#7952B3', name: 'Bootstrap' },
-    { Icon: FaSass, color: '#CC6699', name: 'Sass' },
+    // { Icon: FaSass, color: '#CC6699', name: 'Sass' },
+    // { Icon: FaAngular, color: '#DD0031', name: 'Angular' },
     { Icon: FaVuejs, color: '#4FC08D', name: 'Vue.js' },
-    
+
     // Órbita 2 - Backend + Database + IA (12 ícones)
     { Icon: FaNodeJs, color: '#339933', name: 'Node.js' },
-    { Icon: FaDatabase, color: '#4169E1', name: 'PostgreSQL' },
+    // { Icon: FaPhp, color: '#777BB4', name: 'PHP' },
+    // { Icon: FaJava, color: '#007396', name: 'Java' },
     { Icon: FaDatabase, color: '#4479A1', name: 'MySQL' },
     { Icon: FaDatabase, color: '#47A248', name: 'MongoDB' },
     { Icon: FaCode, color: '#FF6C37', name: 'API REST' },
     { Icon: FaRobot, color: '#412991', name: 'OpenAI' },
+    { Icon: FaDatabase, color: '#4169E1', name: 'PostgreSQL' },
     { Icon: FaPython, color: '#3776AB', name: 'Python' },
     { Icon: FaCode, color: '#85EA2D', name: 'Clean Code' },
+    // { Icon: FaWordpress, color: '#21759B', name: 'WordPress' },
     { Icon: FaMarkdown, color: '#000000', name: 'Markdown' },
-    
+
     // Órbita 3 - Ferramentas + DevOps (8 ícones)
     { Icon: FaGitAlt, color: '#F05032', name: 'Git' },
     { Icon: FaGithub, color: '#181717', name: 'GitHub' },
@@ -106,55 +114,40 @@ function Skills() {
   return (
     <section id="skills">
       <Container>
-        <div data-aos="fade-up">
-          <SectionTitle title="Habilidades" />
-        </div>
-        
         <Row className="align-items-center">
-          {/* OrbitRotation à esquerda */}
-          <Col lg={6} className="mb-5 mb-lg-0" data-aos="fade-right">
-            <div className="orbit-wrapper-container">
-              <OrbitRotation
-                icons={techIcons}
-                orbitCount={3}
-                orbitGap={8}
-                centerIcon={centerIcon}
-                size="md"
-                speed="medium"
-              />
-            </div>
-          </Col>
-
           {/* Skills Grid à direita */}
           <Col lg={6} data-aos="fade-left">
+            <div data-aos="fade-up">
+              <SectionTitle title="Habilidades" />
+            </div>
             <div className="skills-grid">
               {skillCategories.map((category, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="skill-card"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
                   <div className="skill-card-header">
-                    <div 
+                    <div
                       className="skill-icon-wrapper"
                       style={{ backgroundColor: `${category.color}15` }}
                     >
-                      <category.icon 
-                        className="skill-icon" 
+                      <category.icon
+                        className="skill-icon"
                         style={{ color: category.color }}
                       />
                     </div>
                     <h5 className="skill-title">{category.title}</h5>
                   </div>
-                  
+
                   <p className="skill-description">{category.description}</p>
-                  
+
                   <div className="skill-badges">
                     {category.techs.map((tech, idx) => (
-                      <Badge 
-                        key={idx} 
-                        bg="light" 
+                      <Badge
+                        key={idx}
+                        bg="light"
                         text="dark"
                         className="skill-badge"
                       >
@@ -166,10 +159,25 @@ function Skills() {
               ))}
             </div>
           </Col>
+
+          {/* OrbitRotation à esquerda */}
+          <Col lg={6} className="mb-5 mb-lg-0" data-aos="fade-right">
+
+            <div className="orbit-wrapper-container">
+              <OrbitRotation
+                icons={techIcons}
+                orbitCount={3}
+                orbitGap={8}
+                centerIcon={centerIcon}
+                size="md"
+                speed="medium"
+              />
+            </div>
+          </Col>
         </Row>
       </Container>
     </section>
   );
 }
 
-export default Skills;    
+export default Skills;

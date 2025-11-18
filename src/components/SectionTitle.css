@@ -1,13 +1,16 @@
-
 .section-title-wrapper {
   text-align: center;
   margin-bottom: 4rem;
 }
 
+.section-title {
+  font-weight: 700;
+}
+
 .section-title-underline {
   width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 3px;
+  background: var(--accent-purple);
   margin: 1rem auto 0;
   border-radius: 2px;
 }

@@ -7,20 +7,25 @@
 
 .about-card {
   width: 100%;
-  width: 600px ;
+  width: 580px;
   max-width: 380px;
-  background: #1F2121;
+  background: var(--black-color);
   border-radius: 16px;
   padding: 0.5rem;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.01) 0px 520px 146px 0px, rgba(0, 0, 0, 0.06) 0px 333px 133px 0px, rgba(0, 0, 0, 0.26) 0px 83px 83px 0px, rgba(0, 0, 0, 0.29) 0px 21px 46px 0px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-300);
+}
+
+.about-card:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-purple);
 }
 
 .about-image-container {
   position: relative;
   width: 100%;
   aspect-ratio: 3/4.7;
-  /* margin-top: 0.5rem; */
 }
 
 .about-image {
@@ -30,9 +35,9 @@
   height: 100%;
   border-radius: 16px;
   object-fit: cover;
-  background: #000000;
-  filter: contrast(0.75);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 6px 0px;
+  background: var(--black-color);
+  filter: contrast(0.75) grayscale(0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .about-card-footer {
@@ -40,30 +45,35 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  /* margin-top: 0.about-card-footer5rem; */
   font-family: monospace;
-  color: white;
+  color: var(--white-color);
   font-size: 0.75rem;
 }
 
 .about-card-label {
-  color: white;
+  color: var(--white-color);
 }
 
 .about-card-id {
-  color: #9CA3AF;
-  opacity: 0.5;
+  color: var(--gray-500);
+  opacity: 0.7;
 }
 
 .about-content {
-  padding-left: 2rem;
-  text-align: center
+    display: flex;
+    /* padding-left: 2rem; */
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+.lead {
+  max-width: 600px;
 }
 
 .about-content .lead {
   font-size: 1rem;
   line-height: 1.7;
-  color: #495057;
+  color: var(--text-gray);
 }
 
 /* Estilos para o efeito 3D */
@@ -76,9 +86,9 @@
 }
 
 .button-download {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 @media (max-width: 991px) {

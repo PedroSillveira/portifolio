@@ -19,6 +19,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background: var(--white-color);
+  color: var(--text-dark);
 }
 
 /* Scrollbar customizada */
@@ -27,24 +29,54 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--light-color);
+  background: var(--gray-200);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: var(--black-color);
   border-radius: var(--radius-lg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0b5ed7;
+  background: var(--accent-purple);
 }
 
-/* Seções */
+/* Seções com alternância preto/branco */
 section {
   padding: var(--spacing-xl) 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+/* Hero - Escuro */
+section#home {
+  background: var(--gradient-dark);
+  color: var(--text-light);
+}
+
+/* Sobre - Claro */
+section#about {
+  background: var(--white-color);
+  color: var(--text-dark);
+}
+
+/* Habilidades - Escuro */
+section#skills {
+  background: var(--black-color);
+  color: var(--text-light);
+}
+
+/* Projetos - Claro */
+section#projects {
+  background: var(--light-color);
+  color: var(--text-dark);
+}
+
+/* Contato - Escuro */
+section#contact {
+  background: var(--darker-color);
+  color: var(--text-light);
 }
 
 /* Títulos */
@@ -57,55 +89,90 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   transition: var(--transition-base);
+  color: inherit;
 }
 
-/* Botões customizados */
+a:hover {
+  color: var(--accent-purple);
+}
+
+/* Botões - Preto e Branco */
 .btn {
   font-weight: 600;
   padding: 0.75rem 2rem;
   border-radius: var(--radius-md);
   transition: var(--transition-base);
-  border: none;
+  border: 2px solid var(--black-color);
   cursor: pointer;
+  background: var(--black-color);
+  color: var(--white-color);
 }
 
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
 }
 
-/* Cards */
+.btn-outline-light {
+  background: transparent;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+}
+
+.btn-outline-light:hover {
+  background: var(--white-color);
+  color: var(--black-color);
+}
+
+/* Cards - Branco com borda */
 .card {
-  border: none;
+  border: 1px solid var(--gray-300);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: var(--transition-base);
+  background: var(--white-color);
+  color: var(--text-dark);
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-xl) !important;
+  border-color: var(--accent-purple);
 }
 
-/* Badges */
+/* Badges - Preto e Branco */
 .badge {
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   font-size: 0.875rem;
+  background: var(--black-color);
+  color: var(--white-color);
+  border: 1px solid var(--black-color);
 }
 
 /* Form Controls */
 .form-control, .form-select {
   border-radius: var(--radius-md);
-  border: 2px solid #e9ecef;
+  border: 1px solid var(--gray-400);
   padding: 0.75rem 1rem;
   transition: var(--transition-base);
+  background: var(--white-color);
+  color: var(--text-dark);
 }
 
 .form-control:focus, .form-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 0.2rem rgba(74, 20, 140, 0.1);
+  background: var(--white-color);
+  color: var(--text-dark);
+}
+
+.form-label {
+  color: var(--text-light);
+  font-weight: 500;
 }
 
 /* Responsividade */
@@ -135,7 +202,7 @@ a {
   }
 }
 
-/* Animações para OrbitRotation */
+/* Animações */
 @keyframes orbit-spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
