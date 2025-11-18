@@ -22,16 +22,16 @@ function Hero() {
       <Container>
         <Row className="text-left">
           <Col lg={8}>
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <DockText text="PEDRO SILVEIRA" className="hero-title text-white" />
-            </motion.div> */}
+            </motion.div>
 
             <motion.h2
-              className="subtitle h1 mb-4 text-white"
+              className="h1 mb-4 text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -58,12 +58,15 @@ function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
+              style={{ maxWidth: '700px', lineHeight: '1.7' }}
             >
-              Desenvolvedor Full Stack especializado aplicações web escaláveis que geram impacto e agregam valor, impulsionando resultados de negócio e solucionando problemas.
+              Desenvolvedor Full Stack especializado em criar aplicações web funcionais 
+              e escaláveis que solucionam problemas reais, agregam valor e impulsionam 
+              resultados de negócio.
             </motion.p>
 
             <motion.div
-              className="d-flex gap-3  flex-wrap"
+              className="d-flex gap-3 flex-wrap"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}

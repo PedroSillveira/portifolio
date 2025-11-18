@@ -1,14 +1,15 @@
 .about-image-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 16px;
 }
 
 .about-card {
   width: 100%;
-  width: 580px;
-  max-width: 380px;
+  width: 38 0px;
+  /* height: 510px; */
+  /* max-height: 520px; */
   background: var(--black-color);
   border-radius: 16px;
   padding: 0.5rem;

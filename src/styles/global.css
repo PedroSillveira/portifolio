@@ -65,6 +65,8 @@ section#about {
 section#skills {
   background: var(--black-color);
   color: var(--text-light);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Projetos - Claro */
@@ -219,4 +221,29 @@ a:hover {
   to {
     transform: rotate(-360deg);
   }
+}
+
+/* Animação dos Meteors */
+@keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px);
+    opacity: 0;
+  }
+}
+
+.animate-meteor {
+  animation: meteor 5s linear infinite;
+}
+
+/* Utilities para size */
+.size-0\.5 {
+  width: 0.125rem;
+  height: 0.125rem;
 }
