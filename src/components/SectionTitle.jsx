@@ -4,7 +4,7 @@ import './SectionTitle.css';
 function SectionTitle({ title }) {
   return (
     <div className="section-title-wrapper">
-      <h2 className="section-title">{title}</h2>
+      <h1 className="section-title">{title}</h1>
       <div className="section-title-underline"></div>
     </div>
   );
