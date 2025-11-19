@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Badge } from 'react-bootstrap';
-import { 
-  FaHtml5, 
-  FaCss3Alt, 
-  FaBootstrap, 
-  FaReact, 
-  FaNodeJs, 
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaReact,
+  FaNodeJs,
   FaGitAlt,
   FaGithub,
   FaDocker,
@@ -37,29 +37,29 @@ function Skills() {
     { Icon: FaJs, color: '#F7DF1E', name: 'JavaScript' },
     { Icon: FaHtml5, color: '#E34F26', name: 'HTML5' },
     { Icon: FaCss3Alt, color: '#1572B6', name: 'CSS3' },
-    { Icon: FaBootstrap, color: '#7952B3', name: 'Bootstrap' },
-    { Icon: FaSass, color: '#CC6699', name: 'Sass' },
+    { Icon: FaBootstrap, color: '#8f5dd9ff', name: 'Bootstrap' },
+    { Icon: FaSass, color: '#da5396ff', name: 'Sass' },
     { Icon: FaVuejs, color: '#4FC08D', name: 'Vue.js' },
-    
+
     // Órbita 2 - Backend + Database + IA (12 ícones)
     { Icon: FaNodeJs, color: '#339933', name: 'Node.js' },
     { Icon: FaDatabase, color: '#4169E1', name: 'PostgreSQL' },
     { Icon: FaDatabase, color: '#4479A1', name: 'MySQL' },
     { Icon: FaDatabase, color: '#47A248', name: 'MongoDB' },
     { Icon: FaCode, color: '#FF6C37', name: 'API REST' },
-    { Icon: FaRobot, color: '#412991', name: 'OpenAI' },
+    { Icon: FaRobot, color: '#593cb7ff', name: 'OpenAI' },
     { Icon: FaPython, color: '#3776AB', name: 'Python' },
     { Icon: FaCode, color: '#85EA2D', name: 'Clean Code' },
-    { Icon: FaMarkdown, color: '#000000', name: 'Markdown' },
-    
+    { Icon: FaMarkdown, color: '#351a81ff', name: 'Markdown' },
+
     // Órbita 3 - Ferramentas + DevOps (8 ícones)
     { Icon: FaGitAlt, color: '#F05032', name: 'Git' },
-    { Icon: FaGithub, color: '#181717', name: 'GitHub' },
+    { Icon: FaGithub, color: '#ece8f0ff', name: 'GitHub' },
     { Icon: FaDocker, color: '#2496ED', name: 'Docker' },
     { Icon: FaNpm, color: '#CB3837', name: 'NPM' },
-    { Icon: FaLinux, color: '#FCC624', name: 'Linux' },
+    { Icon: FaLinux, color: '#ffffffff', name: 'Linux' },
     { Icon: FaAws, color: '#FF9900', name: 'AWS' },
-    { Icon: FaFigma, color: '#4A154B', name: 'Figma' },
+    { Icon: FaFigma, color: '#850ed5ff', name: 'Figma' },
     { Icon: FaTrello, color: '#0052CC', name: 'Trello' },
   ];
 
@@ -114,11 +114,57 @@ function Skills() {
       />
 
       <Container style={{ position: 'relative', zIndex: 1 }}>
-        <div data-aos="fade-up">
-          <SectionTitle title="Habilidades" />
-        </div>
-        
+
+
         <Row className="align-items-center">
+
+
+          {/* Skills Grid à direita */}
+          <Col lg={6} data-aos="fade-left">
+            <div data-aos="fade-up">
+              <SectionTitle title="Habilidades" />
+            </div>
+            <div className="skills-grid">
+              {skillCategories.map((category, index) => (
+                <div
+                  key={index}
+                  className="skill-card"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <div className="skill-card-header">
+                    <div
+                      className="skill-icon-wrapper"
+                      style={{ backgroundColor: 'var(--gray-100)' }}
+                    >
+                      <category.icon
+                        className="skill-icon"
+                        style={{ color: category.color }}
+                      />
+                    </div>
+                    <h5 className="skill-title">{category.title}</h5>
+                  </div>
+
+                  <p className="skill-description">{category.description}</p>
+
+                  <div className="skill-badges">
+                    {category.techs.map((tech, idx) => (
+                      <Badge
+                        key={idx}
+                        bg="light"
+                        text="dark"
+                        className="skill-badge"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Col>
+
+
           {/* OrbitRotation à esquerda */}
           <Col lg={6} className="mb-5 mb-lg-0" data-aos="fade-right">
             <div className="orbit-wrapper-container">
@@ -130,48 +176,6 @@ function Skills() {
                 size="md"
                 speed="medium"
               />
-            </div>
-          </Col>
-
-          {/* Skills Grid à direita */}
-          <Col lg={6} data-aos="fade-left">
-            <div className="skills-grid">
-              {skillCategories.map((category, index) => (
-                <div 
-                  key={index} 
-                  className="skill-card"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="skill-card-header">
-                    <div 
-                      className="skill-icon-wrapper"
-                      style={{ backgroundColor: 'var(--gray-100)' }}
-                    >
-                      <category.icon 
-                        className="skill-icon" 
-                        style={{ color: category.color }}
-                      />
-                    </div>
-                    <h5 className="skill-title">{category.title}</h5>
-                  </div>
-                  
-                  <p className="skill-description">{category.description}</p>
-                  
-                  <div className="skill-badges">
-                    {category.techs.map((tech, idx) => (
-                      <Badge 
-                        key={idx} 
-                        bg="light" 
-                        text="dark"
-                        className="skill-badge"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              ))}
             </div>
           </Col>
         </Row>

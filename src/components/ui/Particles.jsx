@@ -33,10 +33,10 @@ function hexToRgb(hex) {
 
 function Particles({
   className = '',
-  quantity = 100,
-  staticity = 50,
+  quantity = 1000,
+  staticity = 10,
   ease = 50,
-  size = 0.4,
+  size = 0.6,
   refresh = false,
   color = '#ffffff',
   vx = 0,
