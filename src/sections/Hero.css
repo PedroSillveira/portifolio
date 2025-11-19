@@ -45,6 +45,58 @@
   color: white;
 }
 
+/* Ícones Sociais */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* GitHub - Preto */
+.social-icon-github:hover {
+  background: #181717;
+  border-color: #e7dcdc;
+  box-shadow: 0 10px 25px rgba(24, 23, 23, 0.4);
+}
+
+/* LinkedIn - Azul */
+.social-icon-linkedin:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  box-shadow: 0 10px 25px rgba(10, 102, 194, 0.4);
+}
+
+/* WhatsApp - Verde */
+.social-icon-whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Instagram - Gradiente */
+.social-icon-instagram:hover {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+  border-color: none;
+  box-shadow: 0 10px 25px rgba(207, 80, 139, 0.783);
+}
 @media (max-width: 768px) {
   .hero-section {
     min-height: 100vh;
@@ -54,10 +106,26 @@
   .hero-title {
     font-size: 2.5rem;
   }
+  
+  .social-icons {
+    gap: 0.75rem;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 576px) {
   .hero-title {
     font-size: 1.8rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }
