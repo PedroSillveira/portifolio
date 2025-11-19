@@ -3,6 +3,8 @@ import { Container, Row, Col, Form } from 'react-bootstrap';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
+import Particles from '../components/ui/Particles';
+import './Contact.css';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -33,8 +35,16 @@ function Contact() {
     ];
 
     return (
-        <section id="contact">
-            <Container>
+        <section id="contact" className="contact-section">
+            <Particles
+                className="absolute inset-0"
+                quantity={100}
+                ease={80}
+                color="#ffffff"
+                refresh
+            />
+
+            <Container style={{ position: 'relative', zIndex: 1 }}>
                 <div data-aos="fade-up">
                     <SectionTitle title="Contato" />
                 </div>

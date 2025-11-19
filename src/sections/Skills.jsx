@@ -27,7 +27,7 @@ import {
 } from 'react-icons/fa';
 import SectionTitle from '../components/SectionTitle';
 import OrbitRotation from '../components/ui/OrbitRotation';
-import { Meteors } from '../components/ui/Meteors';
+import Particles from '../components/ui/Particles';
 import './Skills.css';
 
 function Skills() {
@@ -104,10 +104,15 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Meteors Background */}
-      <Meteors number={30} />
-      
+    <section id="skills" className="skills-section">
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        color="#ffffff"
+        refresh
+      />
+
       <Container style={{ position: 'relative', zIndex: 1 }}>
         <div data-aos="fade-up">
           <SectionTitle title="Habilidades" />
