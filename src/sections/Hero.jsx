@@ -9,12 +9,12 @@ import ScrollHero from '../components/ScrollHero';
 import './Hero.css';
 
 function Hero() {
-  const socialLinks = [
-    { icon: FaGithub, url: 'https://github.com/PedroSillveira', label: 'GitHub', color: 'github' },
-    { icon: FaLinkedin, url: 'https://www.linkedin.com/in/pedro-silveira-aaba05186/', label: 'LinkedIn', color: 'linkedin' },
-    { icon: FaWhatsapp, url: 'https://wa.me/5551992520889', label: 'WhatsApp', color: 'whatsapp' },
-    { icon: FaInstagram, url: 'https://www.instagram.com/pedrosilgabriel/', label: 'Instagram', color: 'instagram' }
-  ];
+const socialLinks = [
+  { icon: FaGithub, url: 'https://github.com/PedroSillveira', label: 'GitHub', color: 'github' },
+  { icon: FaLinkedin, url: 'https://www.linkedin.com/in/pedro-silveira-aaba05186/', label: 'LinkedIn', color: 'linkedin' },
+  { icon: FaWhatsapp, url: 'https://wa.me/5551992520889', label: 'WhatsApp', color: 'whatsapp' },
+  { icon: FaInstagram, url: 'https://www.instagram.com/pedrosilgabriel/', label: 'Instagram', color: 'instagram' }
+];  
 
   return (
     <section id="home" className="hero-section">
@@ -59,8 +59,8 @@ function Hero() {
               transition={{ delay: 0.6, duration: 0.8 }}
               style={{ maxWidth: '700px', lineHeight: '1.7' }}
             >
-              Desenvolvedor Full Stack especializado em criar aplicações web funcionais
-              e escaláveis que solucionam problemas reais, agregam valor e impulsionam
+              Desenvolvedor Full Stack especializado em criar aplicações web funcionais 
+              e escaláveis que solucionam problemas reais, agregam valor e impulsionam 
               resultados de negócio.
             </motion.p>
 
@@ -90,7 +90,7 @@ function Hero() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`social-icon social-icon-${social.color}`}
+                  className="social-icon"
                   aria-label={social.label}
                 >
                   <social.icon />

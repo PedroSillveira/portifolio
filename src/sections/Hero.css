@@ -94,8 +94,8 @@
 /* Instagram - Gradiente */
 .social-icon-instagram:hover {
   background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-  border-color: none;
-  box-shadow: 0 10px 25px rgba(207, 80, 139, 0.783);
+  /* border-color: #f8f2f4; */
+  box-shadow: 0 10px 25px rgba(240, 152, 11, 0.783);
 }
 @media (max-width: 768px) {
   .hero-section {
