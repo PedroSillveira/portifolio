@@ -101,7 +101,7 @@
   padding: 0.65rem 1.5rem;
   /* background: var(--black-color); */
   background: #f2f2f2;
-  border: 4px solid var(--accent-purple);
+  border: 2px solid var(--accent-purple);
   border-radius: 50px;
   color: rgb(91, 38, 155);
   font-weight: 600;
