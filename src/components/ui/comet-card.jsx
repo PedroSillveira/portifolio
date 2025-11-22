@@ -67,7 +67,7 @@ export const CometCard = ({
           transition: { duration: 0.2 },
         }}
         className="relative rounded-2xl">
-        {children}
+        {children} 
         <motion.div
           className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
           style={{
