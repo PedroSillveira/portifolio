@@ -8,12 +8,11 @@ function Footer() {
       color: 'var(--white-color)',
       textAlign: 'center',
       padding: '2rem 0',
-      marginTop: '3rem',
       borderTop: '1px solid var(--gray-800)'
     }}>
       <Container>
         <p style={{ margin: 0, color: 'var(--white-color)' }}>
-          © 2024 - Todos os direitos reservados
+          © 2025 - Todos os direitos reservados
         </p>
       </Container>
     </footer>

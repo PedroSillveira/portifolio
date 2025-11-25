@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import Particles from '../components/ui/Particles';
+import { MagicCard } from '../components/ui/MagicCard';
 import './Contact.css';
 
 function Contact() {
@@ -50,108 +51,82 @@ function Contact() {
                 </div>
                 <Row className="justify-content-center">
                     <Col lg={8}>
-                        <Form onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="100">
-                            <Form.Group className="mb-3">
-                                <Form.Label style={{ color: 'var(--white-color)' }}>Nome</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="Seu nome"
-                                    required
-                                    style={{
-                                        background: 'rgba(255, 255, 255, 0.1)',
-                                        border: '1px solid rgba(255, 255, 255, 0.2)',
-                                        color: 'var(--white-color)'
-                                    }}
-                                    onFocus={(e) => {
-                                        e.target.style.borderColor = 'var(--accent-purple)';
-                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-                                    }}
-                                    onBlur={(e) => {
-                                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                                    }}
-                                />
-                            </Form.Group>
+                        <MagicCard 
+                            gradientColor="#4a148c"
+                            gradientFrom="#9E7AFF"
+                            gradientTo="#4a148c"
+                            className="p-4"
+                            style={{ borderRadius: '1rem' }}
+                        >
+                            <Form onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="100">
+                                <Form.Group className="mb-3">
+                                    <Form.Label style={{ color: 'var(--white-color)' }}>Nome</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Seu nome"
+                                        required
+                                        style={{
+                                            background: 'rgba(255, 255, 255, 0.1)',
+                                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                                            color: 'var(--white-color)'
+                                        }}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3">
-                                <Form.Label style={{ color: 'var(--white-color)' }}>Email</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    placeholder="seu@email.com"
-                                    required
-                                    style={{
-                                        background: 'rgba(255, 255, 255, 0.1)',
-                                        border: '1px solid rgba(255, 255, 255, 0.2)',
-                                        color: 'var(--white-color)'
-                                    }}
-                                    onFocus={(e) => {
-                                        e.target.style.borderColor = 'var(--accent-purple)';
-                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-                                    }}
-                                    onBlur={(e) => {
-                                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                                    }}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label style={{ color: 'var(--white-color)' }}>Email</Form.Label>
+                                    <Form.Control
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="seu@email.com"
+                                        required
+                                        style={{
+                                            background: 'rgba(255, 255, 255, 0.1)',
+                                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                                            color: 'var(--white-color)'
+                                        }}
+                                    />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3">
-                                <Form.Label style={{ color: 'var(--white-color)' }}>Mensagem</Form.Label>
-                                <Form.Control
-                                    as="textarea"
-                                    rows={5}
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    placeholder="Sua mensagem..."
-                                    required
-                                    style={{
-                                        background: 'rgba(255, 255, 255, 0.1)',
-                                        border: '1px solid rgba(255, 255, 255, 0.2)',
-                                        color: 'var(--white-color)'
-                                    }}
-                                    onFocus={(e) => {
-                                        e.target.style.borderColor = 'var(--accent-purple)';
-                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-                                    }}
-                                    onBlur={(e) => {
-                                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                                        e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                                    }}
-                                />
-                            </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label style={{ color: 'var(--white-color)' }}>Mensagem</Form.Label>
+                                    <Form.Control
+                                        as="textarea"
+                                        rows={5}
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        placeholder="Sua mensagem..."
+                                        required
+                                        style={{
+                                            background: 'rgba(255, 255, 255, 0.1)',
+                                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                                            color: 'var(--white-color)'
+                                        }}
+                                    />
+                                </Form.Group>
 
-                            <div className="text-center">
-                                <Button 
-                                    type="submit" 
-                                    variant="primary" 
-                                    size="lg"
-                                    style={{
-                                        background: 'var(--white-color)',
-                                        color: 'var(--black-color)',
-                                        border: '2px solid var(--white-color)'
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.background = 'var(--accent-purple)';
-                                        e.currentTarget.style.borderColor = 'var(--accent-purple)';
-                                        e.currentTarget.style.color = 'var(--white-color)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.background = 'var(--white-color)';
-                                        e.currentTarget.style.borderColor = 'var(--white-color)';
-                                        e.currentTarget.style.color = 'var(--black-color)';
-                                    }}
-                                >
-                                    Enviar Mensagem
-                                </Button>
-                            </div>
-                        </Form>
+                                <div className="text-center">
+                                    <Button 
+                                        type="submit" 
+                                        variant="primary" 
+                                        size="lg"
+                                        style={{
+                                            background: 'var(--white-color)',
+                                            color: 'var(--black-color)',
+                                            border: '2px solid var(--white-color)'
+                                        }}
+                                    >
+                                        Enviar Mensagem
+                                    </Button>
+                                </div>
+                            </Form>
+                        </MagicCard>
 
                         <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
                             <h5 className="mb-4" style={{ color: 'var(--white-color)' }}>
