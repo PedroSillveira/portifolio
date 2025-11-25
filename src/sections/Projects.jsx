@@ -1,35 +1,35 @@
 import React from 'react';
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
-import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
+import './Projects.css';
 
 function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'xTalents - Sistema de Recrutamento',
+      title: 'X-talents - Sistema de Recrutamento',
       description: 'Sistema de gerenciamento de processos seletivos e gestão de candidaturas com cálculo de compatibilidade entre vaga e candidato, acompanhamento de etapas e banco de talentos.',
-      image: '/images/project1.png',
-      technologies: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL'],
+      image: `${process.env.PUBLIC_URL}/images/projeto_xtalent_desktop.jpeg`,
+      technologies: ['React.js', 'Node.js', 'PostgreSQL'],
       demoLink: 'https://xtalents.goxsolucoes.com/home',
       githubLink: '#'
     },
     {
       id: 2,
-      title: 'Projeto 2',
-      description: 'Descrição breve do projeto 2. Adicione detalhes sobre funcionalidades e objetivo.',
-      image: '../../public/images/project2.png',
+      title: 'Shopping Maq - Ecommerce & ERP',
+      description: 'Sistema web para venda online de peças e acessórios de máquinas de costura, com gestão centralizada de estoque, controle de ordens de serviço de manutenção e integração com Mercado Pago e Correios.',
+      image: `${process.env.PUBLIC_URL}/images/projeto_desenvolvimento.jpg`,
       technologies: ['React.js', 'Bootstrap', 'Node.js'],
       demoLink: '#',
       githubLink: '#'
     },
     {
       id: 3,
-      title: 'Projeto 3',
-      description: 'Descrição breve do projeto 3. Adicione detalhes sobre funcionalidades e objetivo.',
-      image: '/images/project3.png',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      title: 'Landing Page & Automação pré-venda',
+      description: 'Landing page com redirecionamento para WhatsApp e mensagens pré-configuradas, atendimento automatizado por agentes de pré-venda para esclarecer dúvidas, apresentação de valores e condições comerciais.',
+      image: `${process.env.PUBLIC_URL}/images/projeto_desenvolvimento.jpg`,
+      technologies: ['Agent Builder', 'React', 'Python'],
       demoLink: '#',
       githubLink: '#'
     }
@@ -42,98 +42,47 @@ function Projects() {
           <SectionTitle title="Projetos" />
         </div>
         <Row>
-          {projects.map((project, index) => (
-            <Col key={project.id} md={6} lg={4} className="mb-4">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                whileHover={{ y: -10 }}
-              >
-                <Card 
-                  className="h-100"
-                  style={{
-                    background: 'var(--white-color)',
-                    border: '1px solid var(--gray-300)',
-                    boxShadow: 'var(--shadow-md)',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = 'var(--shadow-xl)';
-                    e.currentTarget.style.borderColor = 'var(--accent-purple)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = 'var(--shadow-md)';
-                    e.currentTarget.style.borderColor = 'var(--gray-300)';
-                  }}
-                >
-                  <Card.Img 
-                    variant="top" 
-                    src={project.image} 
-                    alt={project.title}
-                    style={{ 
-                      height: '200px', 
-                      objectFit: 'cover'
-                    }}
-                  />
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title style={{ color: 'var(--text-dark)' }}>
-                      {project.title}
-                    </Card.Title>
-                    <Card.Text className="flex-grow-1" style={{ color: 'var(--text-gray)' }}>
-                      {project.description}
-                    </Card.Text>
-                    <div className="mb-3">
-                      {project.technologies.map((tech, index) => (
-                        <Badge 
-                          key={index} 
-                          className="me-2 mb-2"
-                          style={{
-                            background: 'var(--black-color)',
-                            color: 'var(--white-color)',
-                            border: '1px solid var(--black-color)'
-                          }}
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="d-flex gap-2">
-                      <Button 
-                        href={project.demoLink} 
-                        target="_blank" 
-                        variant="primary" 
-                        size="sm"
-                        className="flex-grow-1"
-                      >
-                        Ver Demo
-                      </Button>
-                      <Button 
-                        href={project.githubLink} 
-                        target="_blank" 
-                        size="sm"
-                        className="flex-grow-1"
-                        style={{
-                          background: 'transparent',
-                          border: '2px solid var(--black-color)',
-                          color: 'var(--black-color)'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = 'var(--black-color)';
-                          e.currentTarget.style.color = 'var(--white-color)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'transparent';
-                          e.currentTarget.style.color = 'var(--black-color)';
-                        }}
-                      >
-                        GitHub
-                      </Button>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </motion.div>
+          {projects.map((project) => (
+            <Col key={project.id} md={6} lg={4} className="mb-4" data-aos="fade-up">
+              <Card className="project-card h-100">
+                <Card.Img 
+                  variant="top" 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{project.title}</Card.Title>
+                  <Card.Text className="flex-grow-1">{project.description}</Card.Text>
+                  
+                  {/* <div className="mb-3">
+                    {project.technologies.map((tech, index) => (
+                      <Badge key={index} bg="" className="me-2 mb-2">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div> */}
+                  
+                  <div className="d-flex gap-2">
+                    <Button 
+                      href={project.demoLink} 
+                      target="_blank" 
+                      size="sm"
+                      className="flex-grow-1"
+                    >
+                      Ver Demo
+                    </Button>
+                    <Button 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      size="sm"
+                      className="flex-grow-1 btn-outline"
+                    >
+                      GitHub
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
             </Col>
           ))}
         </Row>
