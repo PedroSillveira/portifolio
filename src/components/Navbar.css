@@ -57,8 +57,8 @@
 }
 
 .navbar-brand:hover {
-  transform: scale(1.05);
-  color: var(--accent-purple) !important;
+  transform: scale(1.15);
+  /* color: var(--accent-purple) !important; */
 }
 
 .navbar-nav {
@@ -84,7 +84,7 @@
 
 .nav-link:hover {
   color: white !important;
-  background: rgba(74, 20, 140, 0.2);
+  background: rgba(96, 20, 189, 0.38);
 }
 
 .nav-link:active {
@@ -108,6 +108,7 @@
   background: var(--accent-purple);
   border-color: var(--accent-purple);
   transform: translateY(-2px);
+  color: #f2f2f2;
   box-shadow: 0 4px 15px rgba(74, 20, 140, 0.4);
 }
 

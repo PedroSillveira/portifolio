@@ -53,7 +53,7 @@ function Projects() {
                 />
                 <Card.Body className="d-flex flex-column">
                   <Card.Title>{project.title}</Card.Title>
-                  <Card.Text className="flex-grow-1">{project.description}</Card.Text>
+                  <Card.Text className="flex-grow-1 mb-5">{project.description}</Card.Text>
                   
                   {/* <div className="mb-3">
                     {project.technologies.map((tech, index) => (

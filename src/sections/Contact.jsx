@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import Particles from '../components/ui/Particles';
@@ -13,6 +14,8 @@ function Contact() {
         email: '',
         message: ''
     });
+    const [isLoading, setIsLoading] = useState(false);
+    const [statusMessage, setStatusMessage] = useState('');
 
     const handleChange = (e) => {
         setFormData({
@@ -21,11 +24,33 @@ function Contact() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Mensagem enviada! (Implementar backend depois)');
-        setFormData({ name: '', email: '', message: '' });
+        setIsLoading(true);
+        setStatusMessage('');
+
+        try {
+            await emailjs.send(
+                'service_eicivhn',      // Substitua pelo seu SERVICE_ID
+                'template_bg84urr',     // Substitua pelo seu TEMPLATE_ID
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    to_email: 'pedrosilveira.developer@gmail.com'
+
+                },
+                'THvXTpKsjvL1Jf3Xc'       // Substitua pela sua PUBLIC_KEY
+            );
+
+            setStatusMessage('Mensagem enviada com sucesso!');
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error('Erro ao enviar email:', error);
+            setStatusMessage('Erro ao enviar mensagem. Tente novamente.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const socialLinks = [
@@ -51,7 +76,7 @@ function Contact() {
                 </div>
                 <Row className="justify-content-center">
                     <Col lg={8}>
-                        <MagicCard 
+                        <MagicCard
                             gradientColor="#4a148c"
                             gradientFrom="#9E7AFF"
                             gradientTo="#4a148c"
@@ -68,6 +93,7 @@ function Contact() {
                                         onChange={handleChange}
                                         placeholder="Seu nome"
                                         required
+                                        disabled={isLoading}
                                         style={{
                                             background: 'rgba(255, 255, 255, 0.1)',
                                             border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -85,6 +111,7 @@ function Contact() {
                                         onChange={handleChange}
                                         placeholder="seu@email.com"
                                         required
+                                        disabled={isLoading}
                                         style={{
                                             background: 'rgba(255, 255, 255, 0.1)',
                                             border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -103,6 +130,7 @@ function Contact() {
                                         onChange={handleChange}
                                         placeholder="Sua mensagem..."
                                         required
+                                        disabled={isLoading}
                                         style={{
                                             background: 'rgba(255, 255, 255, 0.1)',
                                             border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -111,18 +139,32 @@ function Contact() {
                                     />
                                 </Form.Group>
 
+                                {statusMessage && (
+                                    <div
+                                        className="mb-3 text-center"
+                                        style={{
+                                            color: statusMessage.includes('sucesso') ? '#25D366' : '#ff4444',
+                                            fontWeight: '500'
+                                        }}
+                                    >
+                                        {statusMessage}
+                                    </div>
+                                )}
+
                                 <div className="text-center">
-                                    <Button 
-                                        type="submit" 
-                                        variant="primary" 
+                                    <Button
+                                        type="submit"
+                                        variant="primary"
                                         size="lg"
+                                        disabled={isLoading}
                                         style={{
                                             background: 'var(--white-color)',
                                             color: 'var(--black-color)',
-                                            border: '2px solid var(--white-color)'
+                                            border: '2px solid var(--white-color)',
+                                            opacity: isLoading ? 0.7 : 1
                                         }}
                                     >
-                                        Enviar Mensagem
+                                        {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
                                     </Button>
                                 </div>
                             </Form>
@@ -139,7 +181,7 @@ function Contact() {
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        style={{ 
+                                        style={{
                                             fontSize: '2rem',
                                             transition: 'transform 0.3s ease',
                                             color: 'var(--white-color)'

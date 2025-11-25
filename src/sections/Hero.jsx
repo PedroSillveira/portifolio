@@ -3,18 +3,18 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from 'react-icons/fa';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import Particles from '../components/ui/Particles';
 import ScrollHero from '../components/ScrollHero';
 import './Hero.css';
 
 function Hero() {
-const socialLinks = [
-  { icon: FaGithub, url: 'https://github.com/PedroSillveira', label: 'GitHub', color: 'github' },
-  { icon: FaLinkedin, url: 'https://www.linkedin.com/in/pedro-silveira-aaba05186/', label: 'LinkedIn', color: 'linkedin' },
-  { icon: FaWhatsapp, url: 'https://wa.me/5551992520889', label: 'WhatsApp', color: 'whatsapp' },
-  { icon: FaInstagram, url: 'https://www.instagram.com/pedrosilgabriel/', label: 'Instagram', color: 'instagram' }
-];  
+  const socialLinks = [
+    { icon: FaGithub, url: 'https://github.com/PedroSillveira', label: 'GitHub', color: 'github' },
+    { icon: FaLinkedin, url: 'https://www.linkedin.com/in/pedro-silveira-aaba05186/', label: 'LinkedIn', color: 'linkedin' },
+    { icon: FaWhatsapp, url: 'https://wa.me/5551992520889', label: 'WhatsApp', color: 'whatsapp' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/pedrosilgabriel/', label: 'Instagram', color: 'instagram' }
+  ];
 
   return (
     <section id="home" className="hero-section">
@@ -27,14 +27,19 @@ const socialLinks = [
       />
 
       <Container>
-        <Row className="text-left">
+        <Row className="text-center justify-content-center align-items-center min-vh-80">
           <Col lg={8}>
+
+            <div className="hello">
+              Olá, eu sou
+            </div>
             <motion.h2
               className="subtitle h1 mb-4 text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
+
               <TypeAnimation
                 sequence={[
                   'Desenvolvedor Frontend',
@@ -53,15 +58,13 @@ const socialLinks = [
             </motion.h2>
 
             <motion.p
-              className="lead mb-2 text-white"
+              className="lead mb-2 text-white text-center mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
               style={{ maxWidth: '700px', lineHeight: '1.7' }}
             >
-              Desenvolvedor Full Stack especializado em criar aplicações web funcionais 
-              e escaláveis que solucionam problemas reais, agregam valor e impulsionam 
-              resultados de negócio.
+              com experiência em criar aplicações web funcionais, escaláveis e alinhadas às necessidades do mercado
             </motion.p>
 
             {/* <motion.div
@@ -90,7 +93,7 @@ const socialLinks = [
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon"
+                  className={`social-icon social-icon-${social.color}`}
                   aria-label={social.label}
                 >
                   <social.icon />

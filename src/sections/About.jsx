@@ -48,20 +48,13 @@ function About() {
             </div>
             <div className="about-content">
               <p className="lead mb-3">
-                Desenvolvedor Full Stack com experiência em criar aplicações web completas e escaláveis.
-                Atualmente, trabalho no Grupo GoX desenvolvendo soluções desde a interface de usuário até
-                APIs backend, seguindo padrões de projetos e metodologias ágeis.
+                Desenvolvedor Full Stack apaixonado por transformar ideias em soluções. Atualmente trabalho no Grupo GoX criando aplicações web e, paralelamente, desenvolvo projetos freelance de SaaS, Landing Page e automação com IA.
               </p>
               <p className="lead mb-3">
-                Como freelancer, desenvolvo soluções web de negócios, incluindo SaaS escaláveis, automação
-                de processos, sites institucionais e landing pages. Tenho formação como Tecnólogo em Análise
-                e Desenvolvimento de Sistemas e estou constantemente me aprimorando em automação com IA's
-                para otimização de processos e tomada de decisões.
+                Graduado em Análise e Desenvolvimento de Sistemas, estou sempre buscando formas de usar tecnologia para resolver problemas e otimizar tempo. Gosto de trabalhar em equipe, tenho ótima comunicação e sou proativo.
               </p>
               <p className="lead mb-4">
-                Combino habilidades técnicas sólidas com soft skills como comunicação assertiva, proatividade
-                e resolução de problemas, buscando sempre alinhar soluções tecnológicas às necessidades reais
-                de negócio.
+                Meu objetivo é simples: aprender o máximo possível, entregar resultado, agregar valor e crescer junto com aquelas que confiam no meu trabalho.
               </p>
 
             </div>
