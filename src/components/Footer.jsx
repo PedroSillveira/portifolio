@@ -12,7 +12,7 @@ function Footer() {
     }}>
       <Container>
         <p style={{ margin: 0, color: 'var(--white-color)' }}>
-          © 2025 - Todos os direitos reservados
+          © 2025 - Desenvolvido por Pedro Silveira
         </p>
       </Container>
     </footer>

@@ -18,3 +18,55 @@
 .contact-section .form-control::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
+
+.contact-section .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-section .form-control:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-section .alert {
+  border-radius: 0.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast personalizado */
+.toast {
+  animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast .btn-close {
+  filter: invert(1);
+}
+
+@media (max-width: 576px) {
+  .toast {
+    min-width: 300px !important;
+    font-size: 0.85rem;
+  }
+}
