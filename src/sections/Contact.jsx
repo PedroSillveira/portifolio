@@ -83,15 +83,15 @@ function Contact() {
             <div
                 style={{
                     position: 'fixed',
-                    top: '80px',
-                    right: '80px',
+                    top: '20px',
+                    right: '20px',
                     zIndex: 9999
                 }}
             >
                 <Toast 
                     show={showToast} 
                     onClose={() => setShowToast(false)} 
-                    delay={15000} 
+                    delay={20000} 
                     autohide
                     style={{
                         minWidth: '350px',

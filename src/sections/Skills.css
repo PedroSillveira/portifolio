@@ -1,5 +1,5 @@
 .skills-grid {
-  display: grid;  
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 }
@@ -69,7 +69,8 @@
 }
 
 .group:hover .skill-card-hover {
-  border-color: rgb(51, 65, 85); /* slate-700 */
+  border-color: rgb(51, 65, 85);
+  /* slate-700 */
 }
 
 .skill-card-header {
@@ -100,13 +101,14 @@
   font-size: 1.2rem;
   margin: 0;
   color: var(--white-color);
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .skill-description {
   font-size: 0.875rem;
   line-height: 1.6;
-  color: rgb(161, 161, 170); /* zinc-400 */
+  color: rgb(161, 161, 170);
+  /* zinc-400 */
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -153,34 +155,52 @@
     grid-template-columns: 1fr;
     margin-top: 2rem;
   }
-  
+
   .orbit-wrapper-container {
     padding: 1.5rem;
   }
+
 }
 
 @media (max-width: 576px) {
+  .skill-card-header {
+    justify-content: center;
+  }
+
+  .skill-title {
+    justify-content: center;
+  }
+
+  .skill-description {
+    text-align: center;
+  }
+  .skill-badges {
+    justify-content: center;
+  }
+
+
+
   .skill-card-hover {
     padding: 1rem;
   }
-  
+
   .skill-icon-wrapper {
     width: 40px;
     height: 40px;
   }
-  
+
   .skill-icon {
     font-size: 1.25rem;
   }
-  
+
   .skill-title {
     font-size: 1rem;
   }
-  
+
   .skill-description {
     font-size: 0.85rem;
   }
-  
+
   .orbit-wrapper-container {
     padding: 1rem;
   }

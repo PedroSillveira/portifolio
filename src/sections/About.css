@@ -280,6 +280,10 @@
     width: 18px;
     height: 18px;
   }
+
+  .about-image-wrapper{
+    justify-content: center;
+  }
 }
 
 @media (max-width: 991px) {

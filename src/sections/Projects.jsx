@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import './Projects.css';
@@ -70,7 +70,7 @@ function Projects() {
                       size="sm"
                       className="flex-grow-1"
                     >
-                      Ver Demo
+                      Ver
                     </Button>
                     <Button 
                       href={project.githubLink} 

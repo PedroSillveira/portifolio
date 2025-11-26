@@ -5,7 +5,6 @@
   justify-content: center;
   width: 100%;
   height: 500px;
-  /* background-color: antiquewhite; */
 }
 
 .orbit-rotation-container {
@@ -13,7 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 /* Centro */
@@ -29,7 +27,6 @@
   box-shadow: 0 10px 30px rgba(74, 20, 140, 0.3);
   backdrop-filter: blur(4px);
   box-shadow: 0px 0px 180px rgba(255, 255, 255, 0.8);
-
 }
 
 /* Órbitas */
@@ -93,25 +90,60 @@
   }
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+/* Responsividade - Tablets */
+@media (max-width: 992px) {
   .orbit-rotation-wrapper {
     height: 400px;
   }
 
   .orbit-center-icon {
-    width: 70px !important;
-    height: 70px !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .orbit-center-icon svg,
+  .orbit-center-icon .center-icon-text {
+    font-size: 1.8rem !important;
   }
 
   .orbit-icon-container {
-    padding: 6px;
+    padding: 7px;
+  }
+
+  .orbit-icon-inner svg {
+    font-size: 1.3rem !important;
   }
 }
 
+/* Responsividade - Tablets Pequenos */
+@media (max-width: 768px) {
+  .orbit-rotation-wrapper {
+    height: 350px;
+  }
+
+  .orbit-center-icon {
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .orbit-center-icon svg,
+  .orbit-center-icon .center-icon-text {
+    font-size: 1.5rem !important;
+  }
+
+  .orbit-icon-container {
+    padding: 5px;
+  }
+
+  .orbit-icon-inner svg {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Responsividade - Smartphones */
 @media (max-width: 576px) {
   .orbit-rotation-wrapper {
-    height: 320px;
+    height: 280px;
   }
 
   .orbit-center-icon {
@@ -119,11 +151,45 @@
     height: 50px !important;
   }
 
-  .orbit-icon-container {
-    padding: 4px;
+  .orbit-center-icon svg,
+  .orbit-center-icon .center-icon-text {
+    font-size: 1.2rem !important;
   }
 
   .orbit-ring {
     border-width: 1px;
+  }
+
+  .orbit-icon-container {
+    padding: 3px;
+  }
+
+  .orbit-icon-inner svg {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Responsividade - Smartphones Pequenos */
+@media (max-width: 400px) {
+  .orbit-rotation-wrapper {
+    height: 240px;
+  }
+
+  .orbit-center-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .orbit-center-icon svg,
+  .orbit-center-icon .center-icon-text {
+    font-size: 1rem !important;
+  }
+
+  .orbit-icon-container {
+    padding: 2px;
+  }
+
+  .orbit-icon-inner svg {
+    font-size: 0.75rem !important;
   }
 }

@@ -44,8 +44,8 @@
   color: var(--white-color);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .project-image {
     height: 180px;
   }
-}
+} */

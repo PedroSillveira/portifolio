@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SectionTitle from '../components/SectionTitle';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import { CometCard } from '../components/ui/comet-card';
 import './About.css';
 
@@ -33,7 +33,7 @@ function About() {
                     />
                   </div>
                   <div className="about-card-footer d-flex align-items-center justify-content-center">
-                    <div className="about-card-label ">Pedro Silveira - Desenvolvedor Full Stack</div>
+                    <div className="about-card-label text-center">Pedro Silveira</div>
                     {/* <div className="about-card-id">#DEV</div> */}
                   </div>
                 </div>

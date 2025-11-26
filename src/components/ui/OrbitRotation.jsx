@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './OrbitRotation.css';
 
 function OrbitRotation({ 
@@ -8,6 +8,30 @@ function OrbitRotation({
   centerIcon = null,
   size = 'md'
 }) {
+  const [responsiveGap, setResponsiveGap] = useState(orbitGap);
+
+  useEffect(() => {
+    const updateGap = () => {
+      const width = window.innerWidth;
+      
+      if (width <= 400) {
+        setResponsiveGap(3); // Smartphones muito pequenos
+      } else if (width <= 576) {
+        setResponsiveGap(4); // Smartphones
+      } else if (width <= 768) {
+        setResponsiveGap(5); // Tablets pequenos
+      } else if (width <= 992) {
+        setResponsiveGap(6); // Tablets
+      } else {
+        setResponsiveGap(orbitGap); // Desktop - usa o valor original
+      }
+    };
+
+    updateGap();
+    window.addEventListener('resize', updateGap);
+    return () => window.removeEventListener('resize', updateGap);
+  }, [orbitGap]);
+
   const iconsPerOrbit = Math.ceil(icons.length / orbitCount);
 
   const sizeClasses = {
@@ -41,7 +65,7 @@ function OrbitRotation({
 
         {/* Generate Orbits */}
         {[...Array(orbitCount)].map((_, orbitIdx) => {
-          const orbitSize = `${8 + orbitGap * (orbitIdx + 1)}rem`;
+          const orbitSize = `${8 + responsiveGap * (orbitIdx + 1)}rem`;
           const angleStep = (2 * Math.PI) / iconsPerOrbit;
           const animationDuration = `${12 + orbitIdx * 6}s`;
           const animationDirection = orbitIdx % 2 === 0 ? 'normal' : 'reverse';
